@@ -4,6 +4,17 @@
     <title>My computer science project</title>
 </head>
 <body>
+    <?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login.html"); // Redirect to the sign-in page if not signed in
+    exit();
+}
+
+$username = $_SESSION['username'];
+?>
+
 <style>
     .container {
         display: flex;
